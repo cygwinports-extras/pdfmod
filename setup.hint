@@ -1,0 +1,6 @@
+category: Graphics
+requires: libcairo2 libgdk_pixbuf2.0_0 libglib2.0_0 libgtk2.0_0 libpango1.0_0 libpoppler-glib_4 mono mono-atk-sharp2.0 mono-gconf-sharp2.0 mono-glib-sharp2.0 mono-gtk-sharp2.0 mono-pango-sharp2.0
+sdesc: "Perform basic modifications of PDF documents"
+ldesc: "PDF Mod is a simple tool for doing basic manipulations of PDF 
+documents. With this tool, you can rotate, remove, or extract pages in a 
+PDF document. You can also add pages from another document."

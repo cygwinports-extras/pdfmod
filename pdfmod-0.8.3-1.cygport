@@ -1,0 +1,10 @@
+inherit mono gnome2
+
+HOMEPAGE="http://live.gnome.org/PdfMod"
+
+PATCH_URI="0.8.3-cygwin-dllmap.patch
+           0.8.3-ignore-no-debug.patch"
+
+DIFF_EXCLUDES="Defines.cs"
+
+CYGCONF_ARGS="--enable-release"

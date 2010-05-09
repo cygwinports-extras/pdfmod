@@ -1,0 +1,25 @@
+BUNDLE_FILES contains Hyena's .mdb debuginfo which are stripped from the 
+binary package.
+
+--- origsrc/pdfmod-0.8.3/Makefile.am	2009-10-02 19:12:39.000000000 -0500
++++ src/pdfmod-0.8.3/Makefile.am	2010-05-09 02:25:26.459389200 -0500
+@@ -16,8 +16,8 @@ run:
+ install-data-hook:
+ 	for ASM in $(BUNDLE_ASSEMBLIES); do \
+ 		$(INSTALL) -m 0755 $$ASM $(DESTDIR)$(INSTALL_DIR_RESOLVED); \
+-	done; \
+-	for ASM in $(BUNDLE_FILES); do \
++	done;
++	-for ASM in $(BUNDLE_FILES); do \
+ 		$(INSTALL) -m 0644 $$ASM $(DESTDIR)$(INSTALL_DIR_RESOLVED); \
+ 	done;
+ 
+--- origsrc/pdfmod-0.8.3/src/Makefile.am	2010-02-18 20:43:55.000000000 -0600
++++ src/pdfmod-0.8.3/src/Makefile.am	2010-05-09 02:22:32.629446700 -0500
+@@ -115,5 +115,5 @@ $(ASSEMBLY_MDB): $(ASSEMBLY)
+ $(ASSEMBLY): $(build_sources) $(build_resources) $(build_datafiles) $(DLL_REFERENCES) $(PROJECT_REFERENCES) $(build_xamlg_list) $(build_satellite_assembly_list)
+ 	mkdir -p $(shell dirname $(ASSEMBLY))
+ 	cp $(BUNDLE_ASSEMBLIES) $(BUILD_DIR)
+-	cp $(BUNDLE_FILES) $(BUILD_DIR)
++	-cp $(BUNDLE_FILES) $(BUILD_DIR)
+ 	$(ASSEMBLY_COMPILER_COMMAND) $(ASSEMBLY_COMPILER_FLAGS) -out:$(ASSEMBLY) -target:$(COMPILE_TARGET) $(build_sources_embed) $(build_resources_embed) $(build_references_ref)
