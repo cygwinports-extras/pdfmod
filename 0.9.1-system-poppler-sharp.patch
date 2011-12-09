@@ -1,0 +1,17 @@
+--- origsrc/pdfmod-0.9.1/lib/poppler-sharp/Makefile.am	2010-06-16 17:48:52.000000000 -0500
++++ src/pdfmod-0.9.1/lib/poppler-sharp/Makefile.am	2011-12-08 21:02:39.846201600 -0600
+@@ -34,8 +34,6 @@ RESGEN=resgen2
+ 	
+ all: $(ASSEMBLY) $(PROGRAMFILES) $(BINARIES)
+ 
+-endif
+-
+ FILES =  \
+ 	poppler-sharp/Document.cs \
+ 	poppler-sharp/generated/Action.cs \
+@@ -130,3 +128,5 @@ $(ASSEMBLY): $(build_sources) $(build_re
+ 	mkdir -p $(shell dirname $(ASSEMBLY))
+ 	$(ASSEMBLY_COMPILER_COMMAND) $(ASSEMBLY_COMPILER_FLAGS) -out:$(ASSEMBLY) -target:$(COMPILE_TARGET) $(build_sources_embed) $(build_resources_embed) $(build_references_ref)
+ 	cp $(srcdir)/poppler-sharp/poppler-sharp.dll.config $(BUILD_DIR)
++
++endif
